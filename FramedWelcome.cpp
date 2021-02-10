@@ -1,10 +1,11 @@
 #include <iostream>
 #include <string>
 #include <stdlib.h>
-
+#include <vector>
 #ifdef _WIN32
 #define WINPAUSE system("pause")
 #endif
+
 
 
 using namespace std;
@@ -25,16 +26,6 @@ int main()
     WINPAUSE;
 }
 
-string InputName() {
-
-    string name;
-
-    cout << "Iveskite savo varda: ";
-    cin >> name;
-
-    return name;
-}
-
 void ModifyString(int amount, string &modifiedString, char addedSymbol) {
 
     for (int i = 0; i < amount; i++)
@@ -44,55 +35,49 @@ void ModifyString(int amount, string &modifiedString, char addedSymbol) {
 
 void drawFrame() {
 
-    string name = InputName();
-    
-    string cardLine1;
-    string cardLine2;
-    string cardLine3;
-    string cardLine4;
-    string cardLine5;
-
-    int lengthOfIntro = 9;
-
+	string name;
+	int lines;
+	
+    cout << "Iveskite varda: ";
+	cin >> name;
+    cout << "Iveskite norima eiluciu skaiciu: ";
+	cin >> lines;
     string greeting;
+    string cardLine[11];
+
+    string edgeCharacter = "*";
 
     if (name[name.length() - 1] == 's')
-        greeting = "Sveikas, ";
-    else { greeting = "Sveika, "; lengthOfIntro--; }
+        greeting = " Sveikas, " + name + "! ";
+    else
+        greeting = " Sveika, " + name + "! ";
 
-//***************
-//lengthOfIntro + name.length() + 3 spaces + ! == lengthOfIntro + name.length() + 4
-    cardLine1 = "*";
-    ModifyString(lengthOfIntro + name.length() + 4, cardLine1, '*');
+    cardLine[0] = edgeCharacter;
+    ModifyString(greeting.length(), cardLine[0], '*');
+    cardLine[0] += edgeCharacter;
 
-    cout << cardLine1 << endl;
+    for (int i = 1; i <= lines / 2; i++) {
 
-//*             *
-//lenghtOfIntro + name.length() + 2 spaces + ! == lengthOfIntro + name.length() + 3
-    cardLine2 = "*";
-    ModifyString(lengthOfIntro + name.length() + 3, cardLine2, ' ');
-    cardLine2 += "*";
+        cardLine[i] = "*";
+        ModifyString(greeting.length(), cardLine[i], ' ');
+        cardLine[i] += "*";
+    }
 
-    cout << cardLine2 << endl;
+    cardLine[lines / 2] = edgeCharacter;
+    cardLine[lines / 2] += greeting;
+    cardLine[lines / 2] += edgeCharacter;
 
-//* Sveikas, vardas! *
-    cardLine3 = "* ";
-    cardLine3 += greeting + name + "! *";
+    for (int i = lines / 2 + 1; i <= lines - 1; i++) {
 
-    cout << cardLine3 << endl;
+        cardLine[i] = "*";
+        ModifyString(greeting.length(), cardLine[i], ' ');
+        cardLine[i] += "*";
+    }
 
-//*             *
-    cardLine4 = "*";
-    ModifyString(lengthOfIntro + name.length() + 3, cardLine4, ' ');
-    cardLine4 += "*";
+    cardLine[lines-1] = edgeCharacter;
+    ModifyString(greeting.length(), cardLine[lines-1], '*');
+    cardLine[lines-1] += edgeCharacter;
 
-    cout << cardLine4 << endl;
-
-//***************
-    cardLine5 = "*";
-    ModifyString(lengthOfIntro + name.length() + 4, cardLine5, '*');
-
-    cout << cardLine5 << endl;
-
-
+    for (int i = 0; i < lines; i++)
+        cout << cardLine[i] << endl;
 }
