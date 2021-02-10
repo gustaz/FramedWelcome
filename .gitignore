@@ -6,6 +6,13 @@ bin-release/
 
 # Other files and folders
 .settings/
+.vs/
+Debug/
+x64/
+FramedWelcome.sln
+FramedWelcome.vcxproj
+FramedWelcome.vcxproj.filters
+FramedWelcome.vcxproj.user
 
 # Executables
 *.swf
