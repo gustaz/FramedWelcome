@@ -16,6 +16,6 @@
 	3. Suvedus visus duomenis programa komandinėje eilutėje atspausdina paveikslėlį.
 	
 ## Versijos
-* V1.0
-* V0.2
-* V0.1
+* [v1.0](https://github.com/gustaz/FramedWelcome/releases/tag/v1.0) Įvykdyta kodo refaktorizacija, pridėta galimybė pasirinkti eilučių skaičių
+* [v0.2](https://github.com/gustaz/FramedWelcome/releases/tag/v0.2) Pridėtas pasisveikinimo variantas moterims
+* [v0.1](https://github.com/gustaz/FramedWelcome/releases/tag/v0.1) Įgyvendintas esminis funkcionalumas
