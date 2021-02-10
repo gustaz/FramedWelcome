@@ -56,9 +56,9 @@ void drawFrame() {
 
     string greeting;
 
-    //if (name[name.length() - 1] == 's')
+    if (name[name.length() - 1] == 's')
         greeting = "Sveikas, ";
-    //else { greeting = "Sveika, "; lengthOfIntro--; }
+    else { greeting = "Sveika, "; lengthOfIntro--; }
 
 //***************
 //lengthOfIntro + name.length() + 3 spaces + ! == lengthOfIntro + name.length() + 4
