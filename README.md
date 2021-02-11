@@ -7,7 +7,8 @@
 
 ## Programos diegimas
 PIRMASIS BŪDAS
-1. Parsisiųsti .exe vykdomąjį failą ir, rekomenduojama tik patikrinus, jog jo MD5 yra 32B05EA220F9427DFA43F86C54F7DD52, paleisti.
+1. Parsisiųsti .exe vykdomąjį failą ir, rekomenduojama tik patikrinus, jog jo MD5 hash atitinka, paleisti.
+**MD5 hash: 32B05EA220F9427DFA43F86C54F7DD52**
 
 ANTRASIS BŪDAS
 1. Parsisiųsti norimą programos versijos kodą iš releases;
