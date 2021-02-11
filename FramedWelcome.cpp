@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 #include <stdlib.h>
-#include <vector>
 #ifdef _WIN32
 #define WINPAUSE system("pause")
 #endif
@@ -42,8 +41,10 @@ void drawFrame() {
 	cin >> name;
     cout << "Iveskite norima eiluciu skaiciu: ";
 	cin >> lines;
+
     string greeting;
-    string cardLine[11];
+
+    string* cardLine = new string[lines];
 
     string edgeCharacter = "*";
 
