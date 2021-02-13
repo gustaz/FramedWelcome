@@ -81,4 +81,6 @@ void drawFrame() {
 
     for (int i = 0; i < lines; i++)
         cout << cardLine[i] << endl;
+
+    delete[] cardLine;
 }
